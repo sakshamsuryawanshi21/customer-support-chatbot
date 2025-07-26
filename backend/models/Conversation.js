@@ -1,8 +1,7 @@
-// backend/models/conversation.js
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const messageSchema = new mongoose.Schema({
-  sender: String,             // 'user' or 'ai'
+  sender: String, // "user" or "ai"
   message: String,
   timestamp: {
     type: Date,
@@ -11,8 +10,8 @@ const messageSchema = new mongoose.Schema({
 });
 
 const conversationSchema = new mongoose.Schema({
-  conversation_id: String,    // You can generate or pass this manually
+  conversation_id: String,
   messages: [messageSchema]
 });
 
-module.exports = mongoose.model('Conversation', conversationSchema);
+module.exports = mongoose.model("Conversation", conversationSchema);
